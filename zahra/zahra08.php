@@ -132,6 +132,7 @@
         $speedReduction = speedReductionArmour($armourName);
         $armourBonusToArmourClass = acBonusForArmour($armourName);
       
+        $fumbieDieArmour = armourFumbleDie($armourName);
     
             
         if(isset($_POST["theiconicWeapon1"]))
@@ -441,7 +442,7 @@
 	let luckModifier = getLuckModifier(luck);
     let maxTechLevel = getMaxTechLevel(intelligence);
     let bonusLanguages = fnAddLanguages(intelligenceModifier, birthAugur, luckModifier);
-	let baseAC = getBaseArmourClass(agilityModifier)  + adjustAC(birthAugur, getLuckModifier(luck));
+	let baseAC = getBaseArmourClass(agilityModifier, birthAugur, luckModifier);
     let healer = getZahra();
 		
 		let healerCharacter = {
@@ -476,7 +477,7 @@
 			"speed": 30 + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
 			"modifiedSpeed": 30 - <?php echo $speedReduction ?> + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
             "fumbleDie": "d4" + addSign(adjustFumble (birthAugur, getLuckModifier(luck))),
-            "modifiedFumbleDie": "<?php echo $armourFumble ?>" + addSign(adjustFumble (birthAugur, getLuckModifier(luck))),
+            "modifiedFumbleDie": "<?php echo $fumbieDieArmour ?>" + addSign(adjustFumble (birthAugur, getLuckModifier(luck))),
 			"critDie": healer.critDie + "" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))),
 			"critTable": healer.critTable,
             "actionDice": healer.actionDice,

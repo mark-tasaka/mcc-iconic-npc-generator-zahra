@@ -94,6 +94,43 @@
         return $acBonus;
     }
 
+    function armourFumbleDie($input)
+    {
+        $fumble = "d4";
+        
+        if($input === "Leather shield")
+        {
+            $fumble = "d8";
+        }
+        else if($input === "Fur cloak")
+        {
+            $fumble = "d8";
+        }
+        else if($input === "Fur cloak  & shield")
+        {
+            $fumble = "d8";
+        }
+        else if($input === "Hide armour")
+        {
+            $fumble = "d12";
+        }
+        else if($input === "Hide armour & shield")
+        {
+            $fumble = "d12";
+        }
+        else if($input === "Giant lizard scale armour")
+        {
+            $fumble = "d16";
+        }
+        else if($input === "Giant lizard scale armour & shield")
+        {
+            $fumble = "d16";
+        }
+        
+        return $fumble;
+    }
+
+
 
 
 

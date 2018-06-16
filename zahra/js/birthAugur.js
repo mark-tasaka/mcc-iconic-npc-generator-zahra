@@ -38,4 +38,5 @@ function getLuckySign(){
     ];
 	
      return luckySign[Math.floor(Math.random() * 30)]; 
+   
 }
